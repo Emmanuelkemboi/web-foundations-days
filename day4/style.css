@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #f4f6f9;
+    --text-color: #202938;
+    --panel-color: #ffffff;
+    --border-color: #d5dce5;
+    --button-bg: #2563eb;
+    --button-text: #ffffff;
+    --muted-color: #64748b;
+}
+
+body.dark {
+    --bg-color: #111827;
+    --text-color: #f3f4f6;
+    --panel-color: #1f2937;
+    --border-color: #475569;
+    --button-bg: #3b82f6;
+    --button-text: #ffffff;
+    --muted-color: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 16px;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--muted-color);
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    padding: 14px;
+    resize: vertical;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: inherit;
+    line-height: 1.6;
+}
+
+textarea:focus {
+    outline: 2px solid var(--button-bg);
+    outline-offset: 2px;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.counters p {
+    margin: 0;
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+#char-count.warning {
+    color: #d97706;
+}
+
+#char-count.over {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 3px;
+}
+
+#clear-btn {
+    background-color: #dc2626;
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    body {
+        padding: 16px 10px;
+    }
+}
