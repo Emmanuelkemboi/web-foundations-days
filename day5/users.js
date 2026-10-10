@@ -90,4 +90,3 @@ filterInput.addEventListener("input", function () {
 
     renderUsers(filteredUsers);
 });
-git add index.html users.js library-api.md
