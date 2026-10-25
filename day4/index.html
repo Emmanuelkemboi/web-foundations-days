@@ -4,29 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes Toolkit</title>
+    <meta name="description" content="QuickNotes helps you create, organize, search, and manage personal notes.">
+    <title>QuickNotes | Your Personal Notes</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container">
+            <h1>QuickNotes</h1>
+            <p>Your simple space to capture your thoughts.</p>
+        </div>
+    </header>
+
     <main class="container">
-        <h1>Notes Toolkit</h1>
-        <p class="subtitle">Write yur own thingggggggsssss</p>
+        <section class="panel" aria-labelledby="create-heading">
+            <h2 id="create-heading">Create a note</h2>
 
-        <label for="note-text">Your note</label>
-        <textarea id="note-text" placeholder="Start typing your note here..." maxlength="10000" rows="10"></textarea>
+            <form id="note-form">
+                <div class="form-group">
+                    <label for="note-input">Your note</label>
+                    <textarea id="note-input" name="note" rows="4" maxlength="200" placeholder="Write your note here..."
+                        required></textarea>
+                    <p class="field-hint">Maximum 200 characters.</p>
+                </div>
 
-        <div class="counters">
-            <p id="char-count">0 / 200 characters</p>
-            <p id="word-count">0 words</p>
-        </div>
+                <div class="form-group">
+                    <label for="note-category">Category</label>
+                    <select id="note-category" name="category">
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                    </select>
+                </div>
 
-        <div class="buttons">
-            <button id="clear-btn" type="button">Clear</button>
-            <button id="theme-toggle" type="button">Dark mode</button>
-        </div>
+                <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+
+                <button type="submit" class="primary-btn">Add Note</button>
+            </form>
+        </section>
+
+        <section class="notes-section" aria-labelledby="notes-heading">
+            <div class="notes-header">
+                <h2 id="notes-heading">Your notes</h2>
+                <p id="note-count" aria-live="polite">You have no notes yet.</p>
+            </div>
+
+            <div class="search-group">
+                <label for="search-input">Search notes</label>
+                <input type="search" id="search-input" name="search" placeholder="Search by note text...">
+            </div>
+
+            <ul id="notes-list" class="notes-list" aria-label="Saved notes"></ul>
+
+            <button type="button" id="clear-all" class="danger-btn" hidden>
+                Clear All Notes
+            </button>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>QuickNotes — Keep your thoughts organized.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
