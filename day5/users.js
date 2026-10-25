@@ -1,3 +1,4 @@
+
 const loadButton = document.querySelector("#load-users");
 const filterInput = document.querySelector("#filter-input");
 const statusMessage = document.querySelector("#status");
@@ -15,23 +16,20 @@ async function loadUsers() {
     try {
         const response = await fetch(apiUrl);
 
-        ```
-if (!response.ok) {
-  throw new Error("Failed to load users. Please try again.");
-}
+        if (!response.ok) {
+            throw new Error("Failed to load users. Please try again.");
+        }
 
-const data = await response.json();
+        const data = await response.json();
 
-if (!Array.isArray(data)) {
-  throw new Error("The server returned invalid user data.");
-}
+        if (!Array.isArray(data)) {
+            throw new Error("The server returned invalid user data.");
+        }
 
-users = data;
-renderUsers(users);
+        users = data;
+        renderUsers(users);
 
-statusMessage.textContent = "Users loaded successfully.";
-```
-
+        statusMessage.textContent = "Users loaded successfully.";
     } catch (error) {
         users = [];
         usersList.replaceChildren();
@@ -55,27 +53,24 @@ function renderUsers(list) {
     list.forEach(function (user) {
         const listItem = document.createElement("li");
 
-        ```
-const name = document.createElement("h3");
-name.textContent = user.name;
+        const name = document.createElement("h3");
+        name.textContent = user.name;
 
-const email = document.createElement("p");
-email.textContent = "Email: " + user.email;
+        const email = document.createElement("p");
+        email.textContent = "Email: " + user.email;
 
-const city = document.createElement("p");
-city.textContent = "City: " + user.address.city;
+        const city = document.createElement("p");
+        city.textContent = "City: " + user.address.city;
 
-const company = document.createElement("p");
-company.textContent = "Company: " + user.company.name;
+        const company = document.createElement("p");
+        company.textContent = "Company: " + user.company.name;
 
-listItem.appendChild(name);
-listItem.appendChild(email);
-listItem.appendChild(city);
-listItem.appendChild(company);
+        listItem.appendChild(name);
+        listItem.appendChild(email);
+        listItem.appendChild(city);
+        listItem.appendChild(company);
 
-usersList.appendChild(listItem);
-```
-
+        usersList.appendChild(listItem);
     });
 }
 
