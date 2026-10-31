@@ -1,0 +1,7 @@
+# Day 8: Course Reflection
+
+The most difficult concept in this course was understanding how to design systems that handle high traffic while maintaining data consistency. I initially found it challenging to understand how databases, caching, load balancers, and background workers work together. I overcame this by breaking a system into smaller components, learning the responsibility of each component, and applying the concepts in assignments such as the SnapShare photo-sharing system and TicketHub.
+
+Based on the feedback I received on my capstone, I would improve the clarity and completeness of my architecture and workflow explanations. I would explain important processes step by step, especially how data moves between components, how errors are handled, and why particular design decisions are made. I would also make sure that the document I submit matches the final version I intend to present.
+
+Next, I want to learn more about backend development, database optimization, distributed systems, and cloud deployment. I would like to gain practical experience building APIs, implementing authentication, handling concurrent requests, and deploying applications that can serve real users. My goal is to become more confident in designing, building, testing, and maintaining scalable software systems.j
